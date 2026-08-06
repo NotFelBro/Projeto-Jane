@@ -77,8 +77,18 @@ nav {
 }
 
 #btnAgendar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
     background: none;
     border-color: white;
     color: white;
-    
+    width: 250px;
+    height: 60px;
+    margin-top: 1.5rem;
+    font-size: 1.8rem;
 }
+
+
+
