@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+button, input, textarea, select {
+    font: inherit;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Josefin+Sans&display=swap');
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background-image: url('./imgs/Gemini_Generated_Image_ptmym0ptmym0ptmy.png');
+    background-size: cover;
+    background-size: center;
+}
+
+/* CABEÇALHO DA PÁGINA */
+
+header {
+    width: 100%;
+    padding: 2% 0 2% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: black;
+}
+
+.titulos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+    font-family: 'Playfair Display', serif;
+    
+}
+
+.titulos > p {
+    color: white;
+}
+
+.titulos > p:hover {
+    color: rgb(247, 234, 162);
+    transition: 1000ms;
+}
+
+/* NAVEGAÇÃO */
+
+nav {
+    width: 100%;
+    padding: 5% 0 5% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.titulo-nav {
+    color: white;
+    font-size: 300%;
+    font-family: 'Playfair Display', serif;
+}
+
+#btnAgendar {
+    background: none;
+    border-color: white;
+    color: white;
+    
+}
