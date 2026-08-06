@@ -90,5 +90,86 @@ nav {
     font-size: 1.8rem;
 }
 
+main {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10% 0 10% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grupo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.grupo > div {
+    text-align: center;
+}
+
+.grupo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.grupo p {
+    color: white;
+    font-family:'Playfair Display', serif;
+    font-size: 3.0rem;
+}
+
+p > .logbob {
+    color: white;
+}
+
+p > .longbob:hover {
+    color: orange;
+}
+
+p > .borboleta {
+    color: white;
+}
+
+p > .borboleta:hover {
+    color: rgb(214, 139, 0);
+}
+
+p > .chanel {
+    color: white;
+}
+
+p > .chanel:hover {
+    color: yellow;
+
+}
+p > .pixiecut {
+    color: white;
+}
+
+p > .pixiecut:hover {
+    color: greenyellow;
+}
+
+p > .shaghair {
+    color: white;
+}
+
+p > .shaghair:hover {
+    color: gold;
+}
+
+p > .camadas {
+    color: white;
+}
+
+p > .camadas:hover {
+    color:crimson;
+}
+
 
 
