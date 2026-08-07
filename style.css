@@ -45,7 +45,8 @@ header {
     align-items: center;
     gap: 200px;
     font-family: 'Playfair Display', serif;
-    
+    font-size: 200%;
+    cursor: pointer;
 }
 
 .titulos > p {
@@ -62,6 +63,7 @@ header {
 nav {
     width: 100%;
     padding: 5% 0 5% 0;
+    margin-top: 130px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,7 +90,10 @@ nav {
     height: 60px;
     margin-top: 1.5rem;
     font-size: 1.8rem;
+    cursor: pointer;
 }
+
+/* CONTEÚDO */
 
 main {
     width: 100%;
@@ -170,6 +175,10 @@ p > .camadas {
 p > .camadas:hover {
     color:crimson;
 }
+
+/* CRÉDITO */
+
+
 
 
 
