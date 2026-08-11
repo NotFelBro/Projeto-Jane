@@ -36,6 +36,10 @@ header {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
     background-color: black;
 }
 
@@ -186,6 +190,35 @@ p > .camadas:hover {
     height: 100vh;
     background-color: black;
     z-index: 10;
+    overflow: hidden;
+}
+
+.coluna-track {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    animation: mover-coluna 30s linear infinite;
+}
+
+.coluna-track img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.coluna:hover .coluna-track {
+    animation-play-state: paused;
+}
+
+@keyframes mover-coluna {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-50%);
+    }
+    
 }
 
 .coluna-esquerda {

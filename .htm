@@ -29,6 +29,41 @@
         AGENDAR
         </button>
     </div>
+
+    <div class="agendamento" id="agendamento" hidden>
+
+        <!-- ETAPA 1: NOME -->
+        <div class="etapa" id="etapa-nome">
+            <label class="agendamento-titulo" for="inputNome">SEU NOME:</label>
+            <input type="text" id="inputNome" placeholder="Digite seu nome completo">
+            <div class="agendamento-botoes">
+                <button class="btn-agendamento" onclick="confirmarNome()">CONFIRMAR</button>
+            </div>
+        </div>
+
+        <!-- ETAPA 2: ESCOLHA DO CORTE -->
+        <div class="etapa" id="etapa-corte" hidden>
+            <div class="agendamento-botoes">
+                <button class="btn-agendamento" onclick="confirmarCorte()">CONFIRMAR</button>
+                <button class="btn-agendamento btn-voltar" onclick="voltarParaNome()">VOLTAR</button>
+            </div>
+
+            <h3 class="agendamento-titulo">ESCOLHA O TIPO DE CORTE</h3>
+
+            <div class="grupo-agendamento" id="grupo-agendamento">
+                <!-- cards gerados dinamicamente via script.js -->
+            </div>
+        </div>
+
+        <!-- ETAPA 3: RESUMO FINAL -->
+        <div class="etapa" id="etapa-resumo" hidden>
+            <h3 class="agendamento-titulo" id="resumoTexto"></h3>
+            <div class="agendamento-botoes">
+                <button class="btn-agendamento" onclick="reiniciarAgendamento()">NOVO AGENDAMENTO</button>
+            </div>
+        </div>
+
+    </div>
     </nav>
 
     <main class="container-principal">
@@ -99,14 +134,16 @@
         </article>
 
         <aside class="coluna">
-
+            <div class="coluna-track" id="coluna-track">
+                <!-- as imagens são inseridas automaticamente pelo script.js -->
+            </div>
         </aside>
     </main>
 
     <footer class="credito">
         <div class="carrosel-container">
             <div class="carrosel-track" id="carrosel-track">
-                <!-- as imagens são inseridas automaticamente pelo script.js -->
+                
             </div>
         </div>
     </footer>

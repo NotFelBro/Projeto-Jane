@@ -29,6 +29,35 @@
         AGENDAR
         </button>
     </div>
+
+    <div class="agendamento" id="agendamento" hidden>
+
+        <div class="etapa" id="etapa-nome">
+            <label class="agendamento-titulo" for="inputNome">SEU NOME:</label>
+            <input type="text" id="inputNome" placeholder="Digite seu nome completo">
+            <div class="agendamento-botoes">
+                <button class="btn-agendamento" onclick="confirmarNome()">CONFIRMAR</button>
+            </div>
+        </div>
+
+        <div class="etapa" id="etapa-corte" hidden>
+            <div class="agendamento-botoes">
+                <button class="btn-agendamento" onclick="confirmarCorte()">CONFIRMAR</button>
+                <button class="btn-agendamento btn-voltar" onclick="voltarParaNome()">VOLTAR</button>
+            </div>
+
+            <h3 class="grupo-agendamento" id="grupo-agendamento">
+
+            </h3>
+        </div>
+
+        <div class="etaoa" id="etapa-resumo" hidden>
+            <h3 class="agendamento-titulo" id="resumotexto"></h3>
+            <div class="agendamento-botoes">
+                <button class="btn-agendamento" onclick="reiniciarAgendamento()">NOVO AGENDAMENTO</button>
+            </div>
+        </div>
+    </div>
     </nav>
 
     <main class="container-principal">
@@ -99,6 +128,9 @@
         </article>
 
         <aside class="coluna">
+            <div class="coluna-track" id="coluna-track">
+
+            </div>
 
         </aside>
     </main>
@@ -106,7 +138,7 @@
     <footer class="credito">
         <div class="carrosel-container">
             <div class="carrosel-track" id="carrosel-track">
-                
+
             </div>
         </div>
     </footer>
