@@ -43,7 +43,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 200px;
+    gap: 120px;
     font-family: 'Playfair Display', serif;
     font-size: 200%;
     cursor: pointer;
@@ -177,6 +177,68 @@ p > .camadas:hover {
 }
 
 /* CRÉDITO */
+
+.coluna {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100vh;
+    background-color: black;
+    z-index: 10;
+}
+
+.coluna-esquerda {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 100vh;
+    background-color: black;
+    z-index: 10;
+}
+
+.credito {
+    width: 100dvw;
+    display: flex;
+    justify-content: center;
+}
+
+.carrosel-container {
+    width: 100%;
+    height: 460px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carrosel-track {
+    display: flex;
+    width: max-content;
+    height: 100%;
+    animation: mover-carrosel 25s linear infinite;
+}
+
+.carrosel-track > img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.carrosel-container:hover .carrosel-track {
+    animation-play-state: paused;
+}
+
+@keyframes mover-carrosel {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+    
+}
+
 
 
 
