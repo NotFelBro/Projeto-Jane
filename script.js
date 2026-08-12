@@ -1,16 +1,15 @@
 const imagensCarrosel = [
     "./imgs/Propriedade 1=Frame 1.png",
-    "./imgs/Propriedade_1_Frame_3.png",
-    "./imgs/Rectangle_69.png",
-    "./imgs/Rectangle_13.png"
+    "./imgs/Propriedade 1=Frame 3.png",
+    "./imgs/Rectangle 69.png",
+    "./imgs/Rectangle 13.png"
 ];
 
-// Imagens do carrossel vertical (aside direito)
 const imagensColuna = [
     "./imgs/Rectangle 20.png",
     "./imgs/Rectangle 21.png",
     "./imgs/Rectangle 72.png",
-    "./imgs/Rectangle 73_2x.png",
+    "./imgs/Rectangle 73@2x.png",
     "./imgs/Rectangle 74.png",
     "./imgs/Rectangle 75.png",
     "./imgs/Rectangle 76.png",
@@ -43,10 +42,6 @@ function criarImagemCarrosel(src) {
     return img;
 }
 
-// ==============================
-// CARROSSEL VERTICAL (aside direito)
-// ==============================
-
 function iniciarColuna() {
     const track = document.getElementById('coluna-track');
     if (!track || imagensColuna.length === 0) return;
@@ -60,11 +55,6 @@ function iniciarColuna() {
         track.appendChild(criarImagemCarrosel(src));
     });
 }
-
-
-// ==============================
-// AGENDAMENTO INTERATIVO
-// ==============================
 
 const cortesDisponiveis = [
     { nome: "Long Bob", preco: 35, imagem: "./imgs/Rectangle 9.png" },
@@ -225,9 +215,24 @@ function reiniciarAgendamento() {
     document.querySelector('.btn').hidden = false;
 }
 
-// ==============================
-// HEADER FIXO
-// ==============================
+function mostrarSecaoHeader(nome) {
+    document.getElementById('secao-home').hidden = true;
+
+    document.querySelectorAll('.secao-header').forEach((secao) => {
+        secao.hidden = secao.id !== `secao-${nome}`;
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function fecharSecaoHeader() {
+    document.querySelectorAll('.secao-header').forEach((secao) => {
+        secao.hidden = true;
+    });
+
+    document.getElementById('secao-home').hidden = false;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
 function ajustarEspacoHeader() {
     const header = document.querySelector('header');
@@ -235,10 +240,47 @@ function ajustarEspacoHeader() {
     document.body.style.paddingTop = header.offsetHeight + 'px';
 }
 
+// ==============================
+// DIAGNÓSTICO DE IMAGENS (temporário)
+// Mostra no console (F12) exatamente quais imagens não carregaram
+// e qual caminho foi tentado, para identificar arquivos faltando
+// ou com nome/maiúsculas diferentes na pasta imgs/.
+// ==============================
+
+function diagnosticarImagens() {
+    const todasImagens = document.querySelectorAll('img');
+    const quebradas = [];
+
+    todasImagens.forEach((img) => {
+        const verificar = () => {
+            if (img.naturalWidth === 0) {
+                quebradas.push(img.currentSrc || img.src);
+                console.error('Imagem NÃO carregou:', img.currentSrc || img.src);
+            }
+        };
+
+        if (img.complete) {
+            verificar();
+        } else {
+            img.addEventListener('load', verificar);
+            img.addEventListener('error', verificar);
+        }
+    });
+
+    setTimeout(() => {
+        if (quebradas.length === 0) {
+            console.log('%cTodas as imagens carregaram com sucesso.', 'color: green; font-weight: bold;');
+        } else {
+            console.log(`%c${quebradas.length} imagem(ns) não carregaram. Veja a lista de caminhos acima em vermelho.`, 'color: red; font-weight: bold;');
+        }
+    }, 1500);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     iniciarCarrosel();
     iniciarColuna();
     ajustarEspacoHeader();
+    diagnosticarImagens();
 
     const inputNome = document.getElementById('inputNome');
     if (inputNome) {

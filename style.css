@@ -419,3 +419,171 @@ p > .camadas:hover {
     }
     
 }
+
+/* ============================== */
+/* SEÇÕES DO HEADER (QUEM SOMOS / SALÃO / MEDIA) */
+/* ============================== */
+
+.secao-header {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    padding: 4% 8% 6%;
+}
+
+.secao-header[hidden] {
+    display: none !important;
+}
+
+.secao-header-conteudo {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+.secao-header-titulo {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.3rem;
+    font-weight: bold;
+    align-self: flex-start;
+    width: 100%;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.secao-header-texto {
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    text-align: justify;
+    width: 100%;
+}
+
+.secao-header .btn-voltar {
+    margin-top: 1rem;
+}
+
+/* QUEM SOMOS */
+
+.secao-quemsomos-logo {
+    width: 100%;
+    max-width: 650px;
+    border-radius: 12px;
+    margin-top: 0.5rem;
+}
+
+/* SALÃO */
+
+.secao-salao-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 100%;
+}
+
+.secao-salao-card {
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 250ms;
+}
+
+.secao-salao-card:hover {
+    transform: translateY(-6px);
+}
+
+.secao-salao-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.secao-salao-card h3 {
+    color: black;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    margin: 0.9rem 1.1rem 0.6rem;
+}
+
+.secao-salao-card p {
+    color: #333;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin: 0 1.1rem;
+}
+
+/* MEDIA */
+
+.secao-media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 50px;
+    width: 100%;
+}
+
+.secao-media-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.06);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 3px solid transparent;
+    transition: background-color 250ms, border-color 250ms;
+}
+
+.secao-media-item:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgb(247, 234, 162);
+}
+
+.media-icone {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.media-texto {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    flex-grow: 1;
+}
+
+.media-card {
+    width: 90px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 800px) {
+    .secao-salao-grid {
+        grid-template-columns: 1fr;
+    }
+    .secao-media-grid {
+        grid-template-columns: 1fr;
+    }
+    .media-card {
+        display: none;
+    }
+}

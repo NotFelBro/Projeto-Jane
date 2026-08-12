@@ -12,13 +12,15 @@
 
     <header>
         <div class="titulos">
-            <p>QUEM SOMOS</p>
-            <p>SALÃO</p>
-            <p>MEDIA</p>
+            <p onclick="mostrarSecaoHeader('quemsomos')">QUEM SOMOS</p>
+            <p onclick="mostrarSecaoHeader('salao')">SALÃO</p>
+            <p onclick="mostrarSecaoHeader('media')">MEDIA</p>
             <p>LOJA</p>
             <p>PROFISSIONAIS</p>
         </div>
     </header>
+
+    <div id="secao-home">
 
     <nav class="navegacao">
         <div class="titulo-nav">
@@ -31,8 +33,6 @@
     </div>
 
     <div class="agendamento" id="agendamento" hidden>
-
-        <!-- ETAPA 1: NOME -->
         <div class="etapa" id="etapa-nome">
             <label class="agendamento-titulo" for="inputNome">SEU NOME:</label>
             <input type="text" id="inputNome" placeholder="Digite seu nome completo">
@@ -41,7 +41,6 @@
             </div>
         </div>
 
-        <!-- ETAPA 2: ESCOLHA DO CORTE -->
         <div class="etapa" id="etapa-corte" hidden>
             <div class="agendamento-botoes">
                 <button class="btn-agendamento" onclick="confirmarCorte()">CONFIRMAR</button>
@@ -51,11 +50,9 @@
             <h3 class="agendamento-titulo">ESCOLHA O TIPO DE CORTE</h3>
 
             <div class="grupo-agendamento" id="grupo-agendamento">
-                <!-- cards gerados dinamicamente via script.js -->
             </div>
         </div>
 
-        <!-- ETAPA 3: ESCOLHA DO HORÁRIO -->
         <div class="etapa" id="etapa-horario" hidden>
             <div class="agendamento-botoes">
                 <button class="btn-agendamento" onclick="confirmarHorario()">CONFIRMAR</button>
@@ -65,11 +62,9 @@
             <h3 class="agendamento-titulo">ESCOLHA O HORÁRIO</h3>
 
             <div class="grupo-horarios" id="grupo-horarios">
-                <!-- horários gerados dinamicamente via script.js -->
             </div>
         </div>
 
-        <!-- ETAPA 4: RESUMO FINAL -->
         <div class="etapa" id="etapa-resumo" hidden>
             <h3 class="agendamento-titulo" id="resumoTexto"></h3>
             <div class="agendamento-botoes">
@@ -149,7 +144,6 @@
 
         <aside class="coluna">
             <div class="coluna-track" id="coluna-track">
-                <!-- as imagens são inseridas automaticamente pelo script.js -->
             </div>
         </aside>
     </main>
@@ -162,8 +156,88 @@
         </div>
     </footer>
 
+    </div>
 
-    
+    <section class="secao-header" id="secao-quemsomos" hidden>
+        <div class="secao-header-conteudo">
+            <h2 class="secao-header-titulo">Quem Somos</h2>
+
+            <p class="secao-header-texto">Desde o primeiro corte, a Bellazza nasceu de um propósito simples: transformar beleza em experiência. Fundado com a paixão por realçar a identidade única de cada pessoa, nosso salão une técnica apurada, sensibilidade estética e um olhar atento aos detalhes que fazem toda a diferença.</p>
+
+            <p class="secao-header-texto">Ao longo dos anos, construímos mais do que um espaço de beleza — criamos um refúgio onde cada cliente é recebido com exclusividade e cuidado. Nossa equipe é formada por profissionais que se dedicam constantemente ao aprimoramento de suas técnicas, acompanhando as tendências internacionais sem nunca perder a essência da elegância atemporal.</p>
+
+            <p class="secao-header-texto">Acreditamos que a verdadeira beleza está na confiança que ela desperta. Por isso, cada serviço é pensado como uma experiência completa: do ambiente sofisticado ao atendimento personalizado, tudo é planejado para que você saia não apenas com um visual renovado, mas com a certeza de ter vivido um momento único.</p>
+
+            <p class="secao-header-texto">Bellazza — onde a arte do cabelo encontra a sofisticação que você merece.</p>
+
+            <img class="secao-quemsomos-logo" src="./imgs/Rectangle 13.png" alt="Bellazza Salão de Beleza">
+
+            <button class="btn-agendamento btn-voltar" onclick="fecharSecaoHeader()">VOLTAR</button>
+        </div>
+    </section>
+
+    <section class="secao-header" id="secao-salao" hidden>
+        <div class="secao-header-conteudo">
+            <h2 class="secao-header-titulo">Nossos serviços</h2>
+
+            <div class="secao-salao-grid">
+                <div class="secao-salao-card">
+                    <img src="./imgs/Rectangle 21.png" alt="Ferramentas de última geração">
+                    <h3>Ferramentas de última geração</h3>
+                    <p>Investimos em equipamentos profissionais de alta performance — secadores de tecnologia iônica, chapinhas e babyliss com controle preciso de temperatura — selecionados para modelar com precisão e sem agredir os fios. Cada ferramenta é escolhida pensando em preservar o brilho e a saúde do cabelo a cada uso.</p>
+                </div>
+
+                <div class="secao-salao-card">
+                    <img src="./imgs/Rectangle 20.png" alt="Produtos de marcas renomadas">
+                    <h3>Produtos de marcas renomadas</h3>
+                    <p>Utilizamos linhas profissionais reconhecidas internacionalmente, com fórmulas específicas para cada tipo de necessidade: hidratação profunda, reconstrução, matização e proteção térmica. Assim garantimos que o resultado do salão continue vivo muito depois que você sair daqui.</p>
+                </div>
+
+                <div class="secao-salao-card">
+                    <img src="./imgs/Rectangle 19.png" alt="Estilo que também é conforto">
+                    <h3>Estilo que também é conforto</h3>
+                    <p>Acreditamos que um cabelo verdadeiramente bonito é aquele que combina estética e bem-estar. Por isso, cada corte e finalização são pensados não apenas para impressionar visualmente, mas para acompanhar sua rotina com leveza — sem pesar, sem incomodar, sem exigir esforço para manter o caimento perfeito. O resultado é um visual estiloso que você sente prazer em usar todos os dias.</p>
+                </div>
+            </div>
+
+            <button class="btn-agendamento btn-voltar" onclick="fecharSecaoHeader()">VOLTAR</button>
+        </div>
+    </section>
+
+    <section class="secao-header" id="secao-media" hidden>
+        <div class="secao-header-conteudo">
+            <h2 class="secao-header-titulo">Siga-nos em nossas redes sociais e adicione nosso contato</h2>
+
+            <div class="secao-media-grid">
+                <a class="secao-media-item" href="https://wa.me/5511967676767" target="_blank" rel="noopener">
+                    <img class="media-icone" src="./imgs/whats.png" alt="WhatsApp">
+                    <span class="media-texto">+55 11 96767-6767</span>
+                    <img class="media-card" src="./imgs/Rectangle 13.png" alt="Bellazza no WhatsApp">
+                </a>
+
+                <a class="secao-media-item" href="https://facebook.com/BellazzaView" target="_blank" rel="noopener">
+                    <img class="media-icone" src="./imgs/Ellipse 4.png" alt="Meta">
+                    <span class="media-texto">@BellazzaView</span>
+                    <img class="media-card" src="./imgs/Rectangle 13.png" alt="Bellazza no Meta">
+                </a>
+
+                <a class="secao-media-item" href="https://instagram.com/Bellazza" target="_blank" rel="noopener">
+                    <img class="media-icone" src="./imgs/Ellipse 2.png" alt="Instagram">
+                    <span class="media-texto">@Bellazza</span>
+                    <img class="media-card" src="./imgs/Rectangle 13.png" alt="Bellazza no Instagram">
+                </a>
+
+                <a class="secao-media-item" href="https://tiktok.com/@BellazzaViews" target="_blank" rel="noopener">
+                    <img class="media-icone" src="./imgs/Ellipse 3.png" alt="TikTok">
+                    <span class="media-texto">@BellazzaViews</span>
+                    <img class="media-card" src="./imgs/Rectangle 13.png" alt="Bellazza no TikTok">
+                </a>
+            </div>
+
+            <button class="btn-agendamento btn-voltar" onclick="fecharSecaoHeader()">VOLTAR</button>
+        </div>
+    </section>
+
     <script src="./script.js"></script>
 </body>
 </html>
