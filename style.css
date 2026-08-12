@@ -97,6 +97,155 @@ nav {
     cursor: pointer;
 }
 
+#btnAgendar:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* AGENDAMENTO - FLUXO INTERATIVO */
+
+.agendamento {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.etapa {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.etapa[hidden],
+.agendamento[hidden],
+.btn[hidden] {
+    display: none !important;
+}
+
+.agendamento-titulo {
+    background-color: #e6e6e6;
+    color: black;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    padding: 0.8rem 2rem;
+    text-align: center;
+    font-weight: normal;
+}
+
+#inputNome {
+    width: 90%;
+    max-width: 700px;
+    padding: 1rem 1.2rem;
+    font-size: 1.3rem;
+    font-family: 'Playfair Display', serif;
+    background-color: #e6e6e6;
+    border: none;
+    color: black;
+    outline: none;
+}
+
+.agendamento-botoes {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-agendamento {
+    background-color: #e6e6e6;
+    color: black;
+    border: none;
+    padding: 0.9rem 2.2rem;
+    font-size: 1.3rem;
+    font-family: 'Playfair Display', serif;
+    cursor: pointer;
+    transition: background-color 300ms;
+}
+
+.btn-agendamento:hover {
+    background-color: white;
+}
+
+.btn-voltar {
+    background-color: #bfbfbf;
+}
+
+.grupo-agendamento {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.card-agendamento {
+    cursor: pointer;
+    text-align: center;
+    border: 3px solid transparent;
+    border-radius: 8px;
+    padding: 6px;
+    transition: border-color 250ms, transform 200ms;
+}
+
+.card-agendamento img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card-agendamento p {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-top: 0.4rem;
+}
+
+.card-agendamento:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.card-agendamento.selecionado {
+    border-color: rgb(247, 234, 162);
+    transform: scale(1.03);
+}
+
+/* HORÁRIOS */
+
+.grupo-horarios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 700px;
+}
+
+.horario-item {
+    cursor: pointer;
+    text-align: center;
+    background-color: #e6e6e6;
+    color: black;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    padding: 0.9rem 0.5rem;
+    border: 3px solid transparent;
+    border-radius: 6px;
+    transition: background-color 250ms, border-color 250ms, transform 200ms;
+}
+
+.horario-item:hover {
+    background-color: white;
+}
+
+.horario-item.selecionado {
+    border-color: rgb(247, 234, 162);
+    background-color: white;
+    transform: scale(1.05);
+}
+
 /* CONTEÚDO */
 
 main {
@@ -218,7 +367,6 @@ p > .camadas:hover {
     to {
         transform: translateY(-50%);
     }
-    
 }
 
 .coluna-esquerda {
@@ -271,9 +419,3 @@ p > .camadas:hover {
     }
     
 }
-
-
-
-
-
-
