@@ -50,7 +50,6 @@ function iniciarColuna() {
         track.appendChild(criarImagemCarrosel(src));
     });
 
-    // Duplica o conjunto para permitir o loop infinito (mesma lógica do carrossel horizontal)
     imagensColuna.forEach((src) => {
         track.appendChild(criarImagemCarrosel(src));
     });
@@ -240,12 +239,7 @@ function ajustarEspacoHeader() {
     document.body.style.paddingTop = header.offsetHeight + 'px';
 }
 
-// ==============================
 // DIAGNÓSTICO DE IMAGENS (temporário)
-// Mostra no console (F12) exatamente quais imagens não carregaram
-// e qual caminho foi tentado, para identificar arquivos faltando
-// ou com nome/maiúsculas diferentes na pasta imgs/.
-// ==============================
 
 function diagnosticarImagens() {
     const todasImagens = document.querySelectorAll('img');

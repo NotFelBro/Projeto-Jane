@@ -47,10 +47,11 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 120px;
+    gap: clamp(16px, 5vw, 120px);
     font-family: 'Playfair Display', serif;
-    font-size: 200%;
+    font-size: clamp(1.1rem, 3vw, 2rem);
     cursor: pointer;
+    padding: 0 1rem;
 }
 
 .titulos > p {
@@ -66,19 +67,20 @@ header {
 
 nav {
     width: 100%;
-    padding: 5% 0 5% 0;
-    margin-top: 130px;
+    padding: 5% 5% 5%;
+    margin-top: clamp(90px, 14vw, 130px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
 }
 
 .titulo-nav {
     color: white;
-    font-size: 300%;
+    font-size: clamp(1.4rem, 5vw, 3rem);
     font-family: 'Playfair Display', serif;
 }
 
@@ -174,9 +176,21 @@ nav {
     background-color: #bfbfbf;
 }
 
+.btn-sair {
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.btn-sair:hover {
+    background-color: rgba(220, 53, 69, 0.15);
+    border-color: rgb(220, 53, 69);
+    color: rgb(255, 120, 130);
+}
+
 .grupo-agendamento {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
     width: 100%;
 }
@@ -217,7 +231,7 @@ nav {
 
 .grupo-horarios {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
     gap: 15px;
     width: 100%;
     max-width: 700px;
@@ -251,10 +265,15 @@ nav {
 main {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 10% 0 10% 0;
+    padding: 10% 5% 10%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.container-secundario {
+    width: 100%;
+    max-width: 1000px;
 }
 
 .grupo {
@@ -278,7 +297,7 @@ main {
 .grupo p {
     color: white;
     font-family:'Playfair Display', serif;
-    font-size: 3.0rem;
+    font-size: clamp(1.4rem, 4vw, 3.0rem);
 }
 
 p > .logbob {
@@ -572,6 +591,18 @@ p > .camadas:hover {
     flex-shrink: 0;
 }
 
+@media (max-width: 1000px) {
+    .secao-salao-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .secao-profissionais-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .secao-loja-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media (max-width: 800px) {
     .secao-salao-grid {
         grid-template-columns: 1fr;
@@ -722,6 +753,107 @@ p > .camadas:hover {
 
 @media (max-width: 800px) {
     .secao-profissionais-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 1450px) {
+    .coluna,
+    .coluna-esquerda {
+        width: 200px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .coluna,
+    .coluna-esquerda {
+        display: none;
+    }
+
+    main {
+        padding: 8% 4%;
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: 4% 0;
+    }
+
+    .titulos {
+        gap: clamp(10px, 4vw, 40px);
+        font-size: clamp(0.9rem, 4vw, 1.3rem);
+        row-gap: 10px;
+    }
+
+    nav {
+        margin-top: clamp(110px, 30vw, 160px);
+        padding: 8% 5%;
+    }
+
+    #btnAgendar {
+        width: 200px;
+        height: 50px;
+        font-size: 1.4rem;
+    }
+
+    .agendamento-titulo {
+        font-size: 1.2rem;
+        padding: 0.7rem 1.2rem;
+    }
+
+    #inputNome {
+        font-size: 1.1rem;
+        padding: 0.9rem 1rem;
+    }
+
+    .btn-agendamento {
+        font-size: 1.1rem;
+        padding: 0.8rem 1.6rem;
+    }
+
+    .grupo-agendamento {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 12px;
+    }
+
+    .grupo-horarios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grupo {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .secao-header {
+        padding: 8% 5%;
+    }
+
+    .secao-header-titulo {
+        font-size: 1.6rem;
+    }
+
+    .secao-header-texto {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
+    .carrosel-container {
+        height: 220px;
+    }
+}
+
+@media (max-width: 420px) {
+    .grupo {
+        grid-template-columns: 1fr;
+    }
+
+    .grupo-horarios {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .secao-loja-grid {
         grid-template-columns: 1fr;
     }
 }
